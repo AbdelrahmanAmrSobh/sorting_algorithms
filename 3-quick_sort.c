@@ -15,40 +15,40 @@ void partition(int *arr, int low, int high, size_t size)
 	int temp;
 
 	if (low >= high)
-        return;
-    for (i = low; i < high; i++)
-    {
-        if (arr[i] < arr[pivot])
-        {
-            if (i != j)
-            {
-                temp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = temp;
-                print_array(arr, size);
-            }
-            j++;
-        }
-    }
-    if (j != pivot && arr[j] != arr[pivot])
-    {
-        temp = arr[j];
-        arr[j] = arr[pivot];
-        arr[pivot] = temp;
-        print_array(arr, size);
-    }
-    partition(arr, low, j - 1, size);
-    partition(arr, j + 1, high, size);
+		return;
+	for (i = low; i < high; i++)
+	{
+		if (arr[i] < arr[pivot])
+		{
+			if (i != j)
+			{
+				temp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = temp;
+				print_array(arr, size);
+			}
+			j++;
+		}
+	}
+	if (j != pivot && arr[j] != arr[pivot])
+	{
+		temp = arr[j];
+		arr[j] = arr[pivot];
+		arr[pivot] = temp;
+		print_array(arr, size);
+	}
+	partition(arr, low, j - 1, size);
+	partition(arr, j + 1, high, size);
 }
 
 /**
- * quick_sort -  function that sorts an array of integers
- * in ascending order using the Quick sort algorithm
- * @array: input array
- * @size: size of array
- *
- * Return: nothing
- */
+* quick_sort -  function that sorts an array of integers
+* in ascending order using the Quick sort algorithm
+* @array: input array
+* @size: size of array
+*
+* Return: nothing
+*/
 void quick_sort(int *array, size_t size)
 {
 	partition(array, 0, size - 1, size);
