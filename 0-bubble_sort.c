@@ -14,7 +14,7 @@ void bubble_sort(int *array, size_t size)
 
 	do {
 		number_of_swaps = index = 0;
-		while (index < size - 1)
+		while (array && index < size - 1)
 		{
 			if (array[index] > array[index + 1])
 			{
