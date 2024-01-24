@@ -17,6 +17,7 @@ typedef struct listint_s
     struct listint_s *next;
 } listint_t;
 
+void shell_sort(int *array, size_t size);
 void print_array(int *array, size_t size);
 void print_list(const listint_t *list);
 void bubble_sort(int *array, size_t size);
